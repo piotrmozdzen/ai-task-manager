@@ -1,0 +1,38 @@
+/* src/components/Navbar.module.css */
+
+.button-text-wrapper {
+  /* Ustawia flexbox dla ułożenia tekstów pionowo. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* `position: relative` jest KLUCZOWE dla poprawnego pozycjonowania `position: absolute` na `.is-2`. */
+  position: relative;
+
+  /* `overflow: hidden` jest KLUCZOWE, aby ukrywać tekst, który wyjeżdża/wjeżdża poza ten kontener, tworząc efekt "slidera". */
+  overflow: hidden;
+
+  /* Ustaw stałą wysokość kontenera. To jest bardzo ważne. */
+  /* Wysokość powinna być równa wysokości linii tekstu, aby animacja była widoczna. */
+  /* Dostosuj 'em' do swojego 'font-size' używanego w linku. */
+  height: 1.2em; /* Przykład: jeśli font-size to 1rem i line-height to 1.2 */
+}
+
+/* Style dla pierwszej warstwy tekstu */
+.button-text {
+  white-space: nowrap; /* Zapobiega zawijaniu się tekstu */
+  display: inline-block; /* Upewnia się, że span może być transformowany za pomocą 'y' */
+  line-height: 1.2; /* Upewnij się, że line-height jest spójne z wysokością wrappera */
+}
+
+/* Style dla drugiej warstwy tekstu */
+.button-text.is-2 {
+  /* Pozycjonuje ten tekst absolutnie wewnątrz `.button-text-wrapper`. */
+  position: absolute;
+  /* `inset: 0` sprawia, że zajmuje całą dostępną przestrzeń (szerokość i wysokość) kontenera rodzica. */
+  inset: 0;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1.2;
+}
