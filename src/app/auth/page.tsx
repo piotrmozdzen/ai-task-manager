@@ -22,7 +22,7 @@ export default function AuthPage() {
       alert(error.message);
     } else {
       alert(isLogin ? "Zalogowano!" : "Utworzono konto!");
-      router.push("/");
+      router.push("/dashboard");
     }
   };
 
